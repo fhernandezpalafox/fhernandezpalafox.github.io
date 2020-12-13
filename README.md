@@ -1,1 +1,0 @@
-# fhernandezpalafox.github.io
