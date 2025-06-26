@@ -1,1 +1,379 @@
-<!doctype html><html lang="en"><head><title>Felipe Hernández Palafox - Blog</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Blog Template"><meta name="author" content="Xiaoying Riley at 3rd Wave Media"><link rel="shortcut icon" href="/iconcode.png"><script defer="defer" src="/assets/fontawesome/js/all.min.js"></script><link id="theme-style" rel="stylesheet" href="/assets/css/theme-7.css"><link href="/static/css/main.ab7136cd.chunk.css" rel="stylesheet"></head><body><div id="root"></div><script src="/assets/plugins/jquery-3.4.1.min.js"></script><script src="/assets/plugins/popper.min.js"></script><script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script><script>!function(e){function r(r){for(var n,a,i=r[0],c=r[1],l=r[2],p=0,s=[];p<i.length;p++)a=i[p],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&s.push(o[a][0]),o[a]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(f&&f(r);s.length;)s.shift()();return u.push.apply(u,l||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,i=1;i<t.length;i++){var c=t[i];0!==o[c]&&(n=!1)}n&&(u.splice(r--,1),e=a(a.s=t[0]))}return e}var n={},o={1:0},u=[];function a(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,a),t.l=!0,t.exports}a.e=function(e){var r=[],t=o[e];if(0!==t)if(t)r.push(t[2]);else{var n=new Promise((function(r,n){t=o[e]=[r,n]}));r.push(t[2]=n);var u,i=document.createElement("script");i.charset="utf-8",i.timeout=120,a.nc&&i.setAttribute("nonce",a.nc),i.src=function(e){return a.p+"static/js/"+({}[e]||e)+"."+{3:"0a7f9ca1"}[e]+".chunk.js"}(e);var c=new Error;u=function(r){i.onerror=i.onload=null,clearTimeout(l);var t=o[e];if(0!==t){if(t){var n=r&&("load"===r.type?"missing":r.type),u=r&&r.target&&r.target.src;c.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",c.name="ChunkLoadError",c.type=n,c.request=u,t[1](c)}o[e]=void 0}};var l=setTimeout((function(){u({type:"timeout",target:i})}),12e4);i.onerror=i.onload=u,document.head.appendChild(i)}return Promise.all(r)},a.m=e,a.c=n,a.d=function(e,r,t){a.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,r){if(1&r&&(e=a(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(a.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)a.d(t,n,function(r){return e[r]}.bind(null,n));return t},a.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(r,"a",r),r},a.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},a.p="/",a.oe=function(e){throw console.error(e),e};var i=this.webpackJsonppagewebfelipe=this.webpackJsonppagewebfelipe||[],c=i.push.bind(i);i.push=r,i=i.slice();for(var l=0;l<i.length;l++)r(i[l]);var f=c;t()}([])</script><script src="/static/js/2.2f4988d8.chunk.js"></script><script src="/static/js/main.86923f9d.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Profesional: Felipe Hernández Palafox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #0582CA;
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding-bottom: 2rem;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 2rem;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
+            text-align: left;
+        }
+        .timeline-dot {
+            content: '';
+            position: absolute;
+            top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            background-color: #00A6FB;
+            border: 4px solid #f0f4f8;
+            border-radius: 50%;
+        }
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -12px;
+        }
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+    </style>
+    <!--
+    Narrative Plan:
+    1.  Introduction: A powerful header establishing Felipe's unique hybrid profile.
+    2.  KPI Section: Quick, digestible stats (years of experience, degrees, conferences) to highlight the breadth of his career. Goal: Inform. Visualization: KPI Cards (Styled HTML).
+    3.  Core Competencies: Visualize his main areas of expertise to show his technical strengths. Goal: Compare. Visualization: Radar Chart (Chart.js).
+    4.  Career Timeline: A dual-track timeline showing the parallel progression of his industry and academic careers, demonstrating their synergy. Goal: Change. Visualization: Timeline (Styled HTML).
+    5.  Knowledge Ecosystem: Break down his conference topics to show where he focuses his thought leadership. Goal: Compare. Visualization: Donut Chart (Chart.js).
+    6.  Academic Foundation: Clearly list his extensive educational background. Goal: Organize. Visualization: Styled List (HTML/CSS).
+    7.  Footer: Call to action with links to his professional profiles.
+
+    Visualization Choices:
+    - KPI Cards: (Goal: Inform) Chosen for their ability to present single, high-impact numbers clearly. Method: Styled HTML. NO SVG.
+    - Radar Chart: (Goal: Compare) Selected to effectively compare proficiency levels across multiple technical domains simultaneously. Library: Chart.js. NO SVG.
+    - Timeline: (Goal: Change) Custom-built with HTML/CSS to show two parallel tracks (Industry vs. Academia) over time, a structure not native to charting libraries. Method: Styled HTML. NO SVG, NO MERMAID JS.
+    - Donut Chart: (Goal: Compare) Used to illustrate the composition of his speaking engagements, making it easy to see his areas of focus. Library: Chart.js. NO SVG.
+    - Styled List: (Goal: Organize) A simple, clear way to present his impressive list of academic achievements chronologically. Method: Styled HTML. NO SVG.
+
+    Color Palette: "Energetic & Playful"
+    - #00A6FB (Bright Blue)
+    - #0582CA (Medium Blue)
+    - #006494 (Dark Blue)
+    - #003554 (Deep Navy)
+    - #0A2463 (Darkest Blue)
+
+    Constraint Confirmation:
+    - NO SVG was used. All visuals are either Chart.js (Canvas) or structured HTML/CSS with Tailwind.
+    - NO MERMAID JS was used. The timeline diagram is implemented with custom HTML/CSS.
+    -->
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#003554] mb-2">Felipe Hernández Palafox</h1>
+            <p class="text-xl md:text-2xl font-semibold text-[#0582CA]">Consultor Estratégico en IA, Datos y Desarrollo de Software</p>
+        </header>
+
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="kpi-card">
+                    <div class="text-6xl font-extrabold text-[#00A6FB]">15+</div>
+                    <div class="text-xl font-semibold text-[#006494] mt-2">Años de Experiencia</div>
+                    <p class="text-slate-600 mt-1">Fusionando industria y academia.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-6xl font-extrabold text-[#00A6FB]">6</div>
+                    <div class="text-xl font-semibold text-[#006494] mt-2">Títulos de Posgrado</div>
+                    <p class="text-slate-600 mt-1">Incluyendo un Doctorado y 5 Maestrías.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-6xl font-extrabold text-[#00A6FB]">30+</div>
+                    <div class="text-xl font-semibold text-[#006494] mt-2">Conferencias</div>
+                    <p class="text-slate-600 mt-1">Compartiendo conocimiento a nivel internacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-center text-[#003554] mb-4">Competencias Técnicas Clave</h2>
+                <p class="text-center text-slate-600 mb-6">Este gráfico de radar ilustra las áreas de mayor dominio técnico, demostrando una capacidad equilibrada entre la gestión de datos, el desarrollo de software y la arquitectura de sistemas.</p>
+                <div class="chart-container">
+                    <canvas id="competenciesChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-center text-[#003554] mb-4">Ecosistema de Conocimiento</h2>
+                 <p class="text-center text-slate-600 mb-6">La distribución de temas en sus ponencias y publicaciones refleja un fuerte enfoque en el desarrollo multiplataforma y la inteligencia artificial, pilares de su liderazgo de opinión.</p>
+                <div class="chart-container">
+                    <canvas id="knowledgeEcosystemChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#003554] mb-10">Evolución Profesional: Una Trayectoria Dual</h2>
+            <div class="relative max-w-4xl mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-[#00A6FB]">
+                            <h3 class="font-bold text-lg text-[#006494]">Industria: Inicios</h3>
+                            <p class="text-sm font-semibold">2008 - 2016</p>
+                            <p class="text-slate-600 text-sm mt-1">Arquitecto y Desarrollador Senior. Lideró proyectos clave en Java/Oracle, SAP ABAP y desarrollo móvil nativo para iOS y Android.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                         <div class="p-4 bg-white rounded-lg shadow-md border-r-4 border-[#0A2463]">
+                            <h3 class="font-bold text-lg text-[#006494]">Academia: Comienzos</h3>
+                            <p class="text-sm font-semibold">2017 - Presente</p>
+                            <p class="text-slate-600 text-sm mt-1">Inicia su carrera como docente en la Universidad La Salle Bajío, UNIVA y La Salle Open University, impartiendo cátedra a nivel licenciatura y maestría.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-[#00A6FB]">
+                            <h3 class="font-bold text-lg text-[#006494]">Industria: Consultoría</h3>
+                            <p class="text-sm font-semibold">2016 - Presente</p>
+                            <p class="text-slate-600 text-sm mt-1">Asume roles de Consultor de TI, gestionando infraestructura cloud (AWS) y seguridad para empresas como Gama Servintemec.</p>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                         <div class="p-4 bg-white rounded-lg shadow-md border-r-4 border-[#0A2463]">
+                            <h3 class="font-bold text-lg text-[#006494]">Academia: Liderazgo</h3>
+                            <p class="text-sm font-semibold">2019 - 2024</p>
+                            <p class="text-slate-600 text-sm mt-1">Asume roles de liderazgo como Coordinador de Licenciatura y Secretario Académico, liderando rediseños curriculares clave, como el de Ingeniería en IA.</p>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-[#00A6FB]">
+                            <h3 class="font-bold text-lg text-[#006494]">Industria: Experto en Contenido</h3>
+                            <p class="text-sm font-semibold">2022 - 2023</p>
+                            <p class="text-slate-600 text-sm mt-1">Lidera el diseño y arquitectura de un Bootcamp intensivo en Flutter para UCAMP.IO, y capacita a equipos de Banco del Bajío.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-lg shadow-lg">
+             <h2 class="text-3xl font-bold text-center text-[#003554] mb-6">Una Sólida Formación Académica</h2>
+             <p class="text-center text-slate-600 max-w-3xl mx-auto mb-8">La extensa y continua formación académica es la base que soporta una carrera de alto impacto, combinando la teoría rigurosa con la aplicación práctica.</p>
+            <ul class="max-w-2xl mx-auto space-y-4">
+                <li class="p-4 bg-slate-100 rounded-md flex items-center">
+                    <span class="text-2xl mr-4">🎓</span>
+                    <div>
+                        <p class="font-bold text-[#006494]">Doctorado en Sistemas Computacionales</p>
+                        <p class="text-slate-600">Universidad Del Sur (Titulado)</p>
+                    </div>
+                </li>
+                <li class="p-4 bg-slate-100 rounded-md flex items-center">
+                    <span class="text-2xl mr-4">📚</span>
+                    <div>
+                        <p class="font-bold text-[#006494]">Maestría en Ciencia de Datos en los Negocios</p>
+                        <p class="text-slate-600">Universidad Tecnológica Latinoamericana - UTEL (Finalizando)</p>
+                    </div>
+                </li>
+                 <li class="p-4 bg-slate-100 rounded-md flex items-center">
+                    <span class="text-2xl mr-4">📱</span>
+                    <div>
+                        <p class="font-bold text-[#006494]">Maestría en Tecnologías Web y Dispositivos Móviles</p>
+                        <p class="text-slate-600">Universidad De La Salle Bajío (Titulado)</p>
+                    </div>
+                </li>
+                 <li class="p-4 bg-slate-100 rounded-md flex items-center">
+                    <span class="text-2xl mr-4">📈</span>
+                    <div>
+                        <p class="font-bold text-[#006494]">Maestría en Gerencia De Proyectos</p>
+                        <p class="text-slate-600">Universidad Europea de Monterrey (Titulado)</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="text-center mt-16 py-8 border-t-2 border-slate-200">
+            <p class="text-xl font-bold text-[#003554] mb-4">Conecta y Colabora</p>
+            <div class="flex justify-center space-x-6">
+                 <a href="https://www.linkedin.com/in/felipe-hernandez-palafox-19513886/" target="_blank" class="text-[#0582CA] hover:text-[#00A6FB] transition">LinkedIn</a>
+                 <a href="https://github.com/fhernandezpalafox" target="_blank" class="text-[#0582CA] hover:text-[#00A6FB] transition">GitHub</a>
+                 <a href="https://www.youtube.com/c/FelipeHernándezPalafox" target="_blank" class="text-[#0582CA] hover:text-[#00A6FB] transition">YouTube</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label) => {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).length > 16 && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            return Array.isArray(label) ? label.join(' ') : label;
+        };
+        
+        const palette = {
+            brightBlue: '#00A6FB',
+            mediumBlue: '#0582CA',
+            darkBlue: '#006494',
+            deepNavy: '#003554',
+            darkestBlue: '#0A2463',
+            background: 'rgba(5, 130, 202, 0.2)',
+            border: '#0582CA'
+        };
+
+        const competenciesData = {
+            labels: ['IA y Ciencia de Datos', 'Desarrollo Multiplataforma', 'Arquitectura de Software', 'Gestión de Proyectos', 'Seguridad Informática', 'Gestión Académica'].map(wrapLabel),
+            datasets: [{
+                label: 'Nivel de Expertise',
+                data: [9, 9, 8, 8, 7, 9],
+                backgroundColor: palette.background,
+                borderColor: palette.border,
+                pointBackgroundColor: palette.border,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: palette.border,
+                borderWidth: 2
+            }]
+        };
+
+        const competenciesCtx = document.getElementById('competenciesChart').getContext('2d');
+        new Chart(competenciesCtx, {
+            type: 'radar',
+            data: competenciesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        pointLabels: { 
+                            font: { size: 12, weight: 'bold' },
+                            color: palette.darkBlue
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            stepSize: 2,
+                            color: palette.deepNavy
+                        },
+                        min: 0,
+                        max: 10
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
+                    }
+                }
+            }
+        });
+
+        const knowledgeData = {
+            labels: ['Desarrollo Móvil (Flutter, Xamarin)', 'Inteligencia Artificial y OpenAI', '.NET y Seguridad', 'Cloud y Big Data'],
+            datasets: [{
+                label: 'Distribución de Temas',
+                data: [40, 25, 20, 15],
+                backgroundColor: [
+                    palette.brightBlue,
+                    palette.mediumBlue,
+                    palette.darkBlue,
+                    palette.deepNavy
+                ],
+                borderColor: '#ffffff',
+                borderWidth: 3,
+                hoverOffset: 4
+            }]
+        };
+
+        const knowledgeCtx = document.getElementById('knowledgeEcosystemChart').getContext('2d');
+        new Chart(knowledgeCtx, {
+            type: 'doughnut',
+            data: knowledgeData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: palette.darkBlue,
+                            font: { size: 12, weight: '600' }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
