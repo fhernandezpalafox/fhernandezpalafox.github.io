@@ -82,6 +82,12 @@
         .timeline-item:nth-child(even) .timeline-dot {
             left: -8px;
         }
+        .tech-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
     </style>
     <!--
     Narrative Plan:
@@ -89,16 +95,18 @@
     2.  KPI Section: Quick, digestible stats (years of experience, degrees, conferences) to highlight the breadth of his career. Goal: Inform. Visualization: KPI Cards (Styled HTML).
     3.  Core Competencies: Visualize his main areas of expertise to show his technical strengths. Goal: Compare. Visualization: Radar Chart (Chart.js).
     4.  Career Timeline: A dual-track timeline showing the parallel progression of his industry and academic careers, demonstrating their synergy. Goal: Change. Visualization: Timeline (Styled HTML).
-    5.  Knowledge Ecosystem: Break down his conference topics to show where he focuses his thought leadership. Goal: Compare. Visualization: Donut Chart (Chart.js).
-    6.  Academic Foundation: Clearly list his extensive educational background. Goal: Organize. Visualization: Styled List (HTML/CSS).
-    7.  Footer: Call to action with links to his professional profiles.
+    5.  Project Highlights: Showcase specific industry projects to provide concrete evidence of skills. Goal: Organize. Visualization: Project Cards (Styled HTML).
+    6.  Knowledge Ecosystem: Break down his conference topics to show where he focuses his thought leadership. Goal: Compare. Visualization: Donut Chart (Chart.js).
+    7.  Tech Toolbox: Detail specific languages, frameworks, and tools. Goal: Organize. Visualization: Styled Lists (HTML/CSS).
+    8.  Academic Foundation: Clearly list his extensive educational background. Goal: Organize. Visualization: Styled List (HTML/CSS).
+    9.  Footer: Call to action with links to his professional profiles.
 
     Visualization Choices:
     - KPI Cards: (Goal: Inform) Chosen for their ability to present single, high-impact numbers clearly. Method: Styled HTML. NO SVG.
     - Radar Chart: (Goal: Compare) Selected to effectively compare proficiency levels across multiple technical domains simultaneously. Library: Chart.js. NO SVG.
     - Timeline: (Goal: Change) Custom-built with HTML/CSS to show two parallel tracks (Industry vs. Academia) over time, a structure not native to charting libraries. Method: Styled HTML. NO SVG, NO MERMAID JS.
     - Donut Chart: (Goal: Compare) Used to illustrate the composition of his speaking engagements, making it easy to see his areas of focus. Library: Chart.js. NO SVG.
-    - Styled List: (Goal: Organize) A simple, clear way to present his impressive list of academic achievements chronologically. Method: Styled HTML. NO SVG.
+    - Project/Tech Cards & Styled Lists: (Goal: Organize) A simple, clear way to present detailed information. Method: Styled HTML. NO SVG.
 
     Color Palette: "Energetic & Playful"
     - #00A6FB (Bright Blue)
@@ -129,9 +137,9 @@
                     <p class="text-slate-600 mt-1">Fusionando industria y academia.</p>
                 </div>
                 <div class="kpi-card">
-                    <div class="text-6xl font-extrabold text-[#00A6FB]">6</div>
+                    <div class="text-6xl font-extrabold text-[#00A6FB]">8</div>
                     <div class="text-xl font-semibold text-[#006494] mt-2">Títulos de Posgrado</div>
-                    <p class="text-slate-600 mt-1">Incluyendo un Doctorado y 5 Maestrías.</p>
+                    <p class="text-slate-600 mt-1">Incluyendo Doctorado y Maestrías.</p>
                 </div>
                 <div class="kpi-card">
                     <div class="text-6xl font-extrabold text-[#00A6FB]">30+</div>
@@ -141,7 +149,7 @@
             </div>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-bold text-center text-[#003554] mb-4">Competencias Técnicas Clave</h2>
                 <p class="text-center text-slate-600 mb-6">Este gráfico de radar ilustra las áreas de mayor dominio técnico, demostrando una capacidad equilibrada entre la gestión de datos, el desarrollo de software y la arquitectura de sistemas.</p>
@@ -154,6 +162,27 @@
                  <p class="text-center text-slate-600 mb-6">La distribución de temas en sus ponencias y publicaciones refleja un fuerte enfoque en el desarrollo multiplataforma y la inteligencia artificial, pilares de su liderazgo de opinión.</p>
                 <div class="chart-container">
                     <canvas id="knowledgeEcosystemChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#003554] mb-10">Proyectos Industriales Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="kpi-card">
+                    <h3 class="text-xl font-bold text-[#006494] mb-2">Arquitecto de Bootcamp Flutter</h3>
+                    <p class="text-slate-600 text-sm mb-3"><span class="font-semibold">Cliente:</span> UCAMP.IO (UTEL)</p>
+                    <p class="text-slate-600 text-sm">Lideró el diseño instruccional y la arquitectura de contenido para un bootcamp intensivo, definiendo la ruta de aprendizaje y asegurando la calidad técnica.</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-xl font-bold text-[#006494] mb-2">Consultoría y Capacitación</h3>
+                    <p class="text-slate-600 text-sm mb-3"><span class="font-semibold">Cliente:</span> Banco del Bajío</p>
+                    <p class="text-slate-600 text-sm">Impartió un curso especializado y avanzado sobre "Tecnologías Web y Dispositivos Móviles" para los equipos de desarrollo internos del banco.</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-xl font-bold text-[#006494] mb-2">Líder de Desarrollo de E-commerce</h3>
+                    <p class="text-slate-600 text-sm mb-3"><span class="font-semibold">Cliente:</span> Coqueta & Audaz (vía Acrux)</p>
+                    <p class="text-slate-600 text-sm">Dirigió el desarrollo del portal de ventas, implementando soluciones robustas con Java (JSP) y una base de datos Oracle (PL/SQL).</p>
                 </div>
             </div>
         </section>
@@ -206,37 +235,87 @@
             </div>
         </section>
 
+        <section class="mb-16 bg-white p-8 rounded-lg shadow-lg">
+             <h2 class="text-3xl font-bold text-center text-[#003554] mb-8">Caja de Herramientas Tecnológicas</h2>
+             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tech-card">
+                    <h3 class="font-bold text-lg text-[#006494] mb-3">Lenguajes</h3>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>Python</li>
+                        <li>JavaScript / Node.js</li>
+                        <li>Dart</li>
+                        <li>Java / Kotlin</li>
+                        <li>Swift / Objective-C</li>
+                        <li>C#</li>
+                        <li>PHP, Ruby, R</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3 class="font-bold text-lg text-[#006494] mb-3">Frameworks</h3>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>Flutter</li>
+                        <li>.NET / Xamarin</li>
+                        <li>Angular / Vue.js</li>
+                        <li>TensorFlow / PyTorch</li>
+                        <li>Electron.js</li>
+                        <li>Java EE / JSP</li>
+                    </ul>
+                </div>
+                 <div class="tech-card">
+                    <h3 class="font-bold text-lg text-[#006494] mb-3">Bases de Datos</h3>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>MySQL</li>
+                        <li>SQL Server</li>
+                        <li>Oracle (PL/SQL)</li>
+                        <li>SQLite</li>
+                        <li>Bases de datos NoSQL</li>
+                    </ul>
+                </div>
+                 <div class="tech-card">
+                    <h3 class="font-bold text-lg text-[#006494] mb-3">Plataformas y Herramientas</h3>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>AWS / Heroku</li>
+                        <li>Docker</li>
+                        <li>Git / GitHub</li>
+                        <li>Jupyter, Anaconda</li>
+                        <li>Android Studio, Xcode</li>
+                        <li>Metodologías: Scrum, PMI</li>
+                    </ul>
+                </div>
+             </div>
+        </section>
+
         <section class="bg-white p-8 rounded-lg shadow-lg">
              <h2 class="text-3xl font-bold text-center text-[#003554] mb-6">Una Sólida Formación Académica</h2>
              <p class="text-center text-slate-600 max-w-3xl mx-auto mb-8">La extensa y continua formación académica es la base que soporta una carrera de alto impacto, combinando la teoría rigurosa con la aplicación práctica.</p>
-            <ul class="max-w-2xl mx-auto space-y-4">
-                <li class="p-4 bg-slate-100 rounded-md flex items-center">
-                    <span class="text-2xl mr-4">🎓</span>
-                    <div>
-                        <p class="font-bold text-[#006494]">Doctorado en Sistemas Computacionales</p>
-                        <p class="text-slate-600">Universidad Del Sur (Titulado)</p>
-                    </div>
+            <ul class="max-w-3xl mx-auto space-y-4">
+                <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Doctorado en Sistemas Computacionales</p>
+                    <p class="text-slate-600 text-sm">Universidad Del Sur (Titulado)</p>
                 </li>
-                <li class="p-4 bg-slate-100 rounded-md flex items-center">
-                    <span class="text-2xl mr-4">📚</span>
-                    <div>
-                        <p class="font-bold text-[#006494]">Maestría en Ciencia de Datos en los Negocios</p>
-                        <p class="text-slate-600">Universidad Tecnológica Latinoamericana - UTEL (Finalizando)</p>
-                    </div>
+                <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Maestría en Inteligencia Artificial</p>
+                    <p class="text-slate-600 text-sm">Universidad UDAVINCI (En curso)</p>
                 </li>
-                 <li class="p-4 bg-slate-100 rounded-md flex items-center">
-                    <span class="text-2xl mr-4">📱</span>
-                    <div>
-                        <p class="font-bold text-[#006494]">Maestría en Tecnologías Web y Dispositivos Móviles</p>
-                        <p class="text-slate-600">Universidad De La Salle Bajío (Titulado)</p>
-                    </div>
+                <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Maestría en Inteligencia Artificial Aplicada</p>
+                    <p class="text-slate-600 text-sm">Universidad IEP (En curso)</p>
                 </li>
-                 <li class="p-4 bg-slate-100 rounded-md flex items-center">
-                    <span class="text-2xl mr-4">📈</span>
-                    <div>
-                        <p class="font-bold text-[#006494]">Maestría en Gerencia De Proyectos</p>
-                        <p class="text-slate-600">Universidad Europea de Monterrey (Titulado)</p>
-                    </div>
+                <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Maestría en Ciencia de Datos en los Negocios</p>
+                    <p class="text-slate-600 text-sm">UTEL (Finalizando)</p>
+                </li>
+                 <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Maestría en Tecnologías Web y Dispositivos Móviles</p>
+                    <p class="text-slate-600 text-sm">Universidad De La Salle Bajío (Titulado)</p>
+                </li>
+                 <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Maestría en Gerencia De Proyectos</p>
+                    <p class="text-slate-600 text-sm">Universidad Europea de Monterrey (Titulado)</p>
+                </li>
+                 <li class="p-3 bg-slate-100 rounded-md">
+                    <p class="font-bold text-[#006494]">Licenciatura en Tecnologías de la Información</p>
+                    <p class="text-slate-600 text-sm">Universidad Tecnológica de León (Titulado)</p>
                 </li>
             </ul>
         </section>
@@ -302,48 +381,51 @@
         };
 
         const competenciesCtx = document.getElementById('competenciesChart').getContext('2d');
-        new Chart(competenciesCtx, {
-            type: 'radar',
-            data: competenciesData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
-                        pointLabels: { 
-                            font: { size: 12, weight: 'bold' },
-                            color: palette.darkBlue
-                        },
-                        ticks: {
-                            backdropColor: 'rgba(255, 255, 255, 0.75)',
-                            stepSize: 2,
-                            color: palette.deepNavy
-                        },
-                        min: 0,
-                        max: 10
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: { title: tooltipTitleCallback }
+        if(competenciesCtx) {
+            new Chart(competenciesCtx, {
+                type: 'radar',
+                data: competenciesData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            pointLabels: { 
+                                font: { size: 12, weight: 'bold' },
+                                color: palette.darkBlue
+                            },
+                            ticks: {
+                                backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                stepSize: 2,
+                                color: palette.deepNavy
+                            },
+                            min: 0,
+                            max: 10
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: { title: tooltipTitleCallback }
+                        }
                     }
                 }
-            }
-        });
-
+            });
+        }
+        
         const knowledgeData = {
-            labels: ['Desarrollo Móvil (Flutter, Xamarin)', 'Inteligencia Artificial y OpenAI', '.NET y Seguridad', 'Cloud y Big Data'],
+            labels: ['Flutter y Xamarin', 'IA y OpenAI', '.NET y Seguridad', 'Cloud y Big Data', 'Web (JS, PHP, Java)'].map(wrapLabel),
             datasets: [{
                 label: 'Distribución de Temas',
-                data: [40, 25, 20, 15],
+                data: [35, 25, 15, 15, 10],
                 backgroundColor: [
                     palette.brightBlue,
                     palette.mediumBlue,
                     palette.darkBlue,
-                    palette.deepNavy
+                    palette.deepNavy,
+                    palette.darkestBlue
                 ],
                 borderColor: '#ffffff',
                 borderWidth: 3,
@@ -352,28 +434,29 @@
         };
 
         const knowledgeCtx = document.getElementById('knowledgeEcosystemChart').getContext('2d');
-        new Chart(knowledgeCtx, {
-            type: 'doughnut',
-            data: knowledgeData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '60%',
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            color: palette.darkBlue,
-                            font: { size: 12, weight: '600' }
+        if(knowledgeCtx) {
+            new Chart(knowledgeCtx, {
+                type: 'doughnut',
+                data: knowledgeData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: palette.darkBlue,
+                                font: { size: 12, weight: '600' }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: { title: tooltipTitleCallback }
                         }
-                    },
-                    tooltip: {
-                        callbacks: { title: tooltipTitleCallback }
                     }
                 }
-            }
-        });
-
+            });
+        }
     </script>
 </body>
 </html>
